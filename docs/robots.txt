@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asaruto1509.github.io/shodan-memo-seiri/sitemap.xml

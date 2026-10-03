@@ -1,0 +1,22 @@
+name: Link health
+
+on:
+  schedule:
+    - cron: "17 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-entrances:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live tool and free guide
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --max-time 30 --retry 2 \
+            "https://shodan-memo-seiri.raitoninngu11111.chatgpt.site/" >/dev/null
+          curl --fail --silent --show-error --location --max-time 30 --retry 2 \
+            "https://tips.jp/u/ai-lab/a/o6yQ2Vvb" >/dev/null
