@@ -27,23 +27,3 @@ jobs:
             "https://shodan-memo-seiri.raitoninngu11111.chatgpt.site/" >/dev/null
           curl --fail --silent --show-error --location --max-time 30 --retry 2 \
             "https://tips.jp/u/ai-lab/a/o6yQ2Vvb" >/dev/null
-      - name: Notify IndexNow after a published content change
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        shell: bash
-        run: |
-          set -euo pipefail
-          key_file="$(find docs -maxdepth 1 -type f -regextype posix-extended -regex '.*/[0-9a-f]{32}\.txt' -print -quit)"
-          test -n "${key_file}"
-          key="$(cat "${key_file}")"
-          key_url="https://asaruto1509.github.io/shodan-memo-seiri/$(basename "${key_file}")"
-          for attempt in $(seq 1 24); do
-            remote="$(curl --fail --silent --show-error --location --max-time 15 "${key_url}" || true)"
-            if [ "${remote}" = "${key}" ]; then break; fi
-            if [ "${attempt}" -eq 24 ]; then exit 1; fi
-            sleep 5
-          done
-          curl --fail --silent --show-error --get --max-time 30 \
-            --data-urlencode "url=https://asaruto1509.github.io/shodan-memo-seiri/" \
-            --data-urlencode "key=${key}" \
-            --data-urlencode "keyLocation=${key_url}" \
-            "https://www.bing.com/indexnow" >/dev/null
