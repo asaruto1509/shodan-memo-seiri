@@ -6,6 +6,7 @@ on:
     paths:
       - "docs/**"
       - "templates/**"
+      - ".github/workflows/link-health.yml"
   schedule:
     - cron: "17 1 * * 1"
   workflow_dispatch:
@@ -28,7 +29,7 @@ jobs:
           curl --fail --silent --show-error --location --max-time 30 --retry 2 \
             "https://tips.jp/u/ai-lab/a/o6yQ2Vvb" >/dev/null
       - name: Notify IndexNow after a published content change
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           set -euo pipefail
