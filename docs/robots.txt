@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://asaruto1509.github.io/shodan-memo-seiri/sitemap.xml
+Sitemap: https://asaruto1509.github.io/shodan-memo-seiri/feed.xml

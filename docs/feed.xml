@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AI実用ラボ 商談メモ整理テンプレート</title>
+  <id>https://asaruto1509.github.io/shodan-memo-seiri/</id>
+  <link rel="self" href="https://asaruto1509.github.io/shodan-memo-seiri/feed.xml"/>
+  <link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+  <link rel="alternate" href="https://asaruto1509.github.io/shodan-memo-seiri/"/>
+  <updated>2026-10-03T04:22:00Z</updated>
+  <entry>
+    <title>商談メモ整理テンプレート v1.0.0</title>
+    <id>https://github.com/asaruto1509/shodan-memo-seiri/releases/tag/v1.0.0</id>
+    <link href="https://asaruto1509.github.io/shodan-memo-seiri/"/>
+    <updated>2026-10-03T04:22:00Z</updated>
+    <summary>課題・提案・確認事項・次の行動から提案書の骨子を作る無料Markdownテンプレートです。</summary>
+  </entry>
+</feed>
