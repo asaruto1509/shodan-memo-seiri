@@ -17,6 +17,8 @@ jobs:
   verify-public-entrances:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out published source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Check live tool and free guide
         shell: bash
         run: |
